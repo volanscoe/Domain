@@ -8,6 +8,7 @@ phases:
       - cd ./Customer
       - ls
       - mvn spring-boot:build-image -DskipTests
+      - docker image ls
   
   build:
     commands:
