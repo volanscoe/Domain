@@ -51,7 +51,7 @@
 						</exclude>
 					</excludes>
 					<image>
-						<name>volans/${project.artifactId}:${project.version}</name>
+						<name>608100859042.dkr.ecr.us-east-1.amazonaws.com/volanscoe/${project.artifactId}:${project.version}</name>
 					</image>
 					<pullPolicy>IF_NOT_PRESENT</pullPolicy>
 				</configuration>
