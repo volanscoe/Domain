@@ -5,6 +5,8 @@ phases:
     commands:
       - echo 'TESTING NOW'
       - mvn --version
+      - cd ./Customer
+      - ls
   
   build:
     commands:
