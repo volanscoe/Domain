@@ -3,9 +3,8 @@ version: 0.2
 phases:
   pre_build:
     commands:
-      - npm install
+      - echo 'TESTING NOW'
   
   build:
     commands:
-      - npm run build
       - echo 'TEST'
