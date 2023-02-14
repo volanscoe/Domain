@@ -1,13 +1,13 @@
-package com.volans.coe.domain.domainservices;
+package com.volans.coe.domain.domain.service;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DomainServicesApplication {
+public class CustomerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DomainServicesApplication.class, args);
+		SpringApplication.run(CustomerApplication.class, args);
 	}
 
 }
