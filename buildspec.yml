@@ -14,6 +14,7 @@ phases:
   build:
     commands:
       - echo 'PUSHING'
+      - $(aws ecr get-login --no-include-email)
 #      - kubectl --version
       - docker push 608100859042.dkr.ecr.us-east-1.amazonaws.com/volanscoe/customer:latest
       - echo 'PUSHED'
