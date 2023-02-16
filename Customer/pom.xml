@@ -51,7 +51,8 @@
 						</exclude>
 					</excludes>
 					<image>
-						<name>${project.artifactId}:${project.version}</name>
+<!--						<name>${project.artifactId}:${project.version}</name>-->
+						<name>volanscoe:latest</name>
 					</image>
 					<pullPolicy>IF_NOT_PRESENT</pullPolicy>
 				</configuration>

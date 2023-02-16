@@ -9,13 +9,15 @@ phases:
       - ls
       - mvn spring-boot:build-image -DskipTests
       - docker image ls
-      - docker tag customer:0.0.1-SNAPSHOT 608100859042.dkr.ecr.us-east-1.amazonaws.com/volanscoe/customer:0.0.1-SNAPSHOT
+#      - docker tag customer:0.0.1-SNAPSHOT 608100859042.dkr.ecr.us-east-1.amazonaws.com/volanscoe/customer:0.0.1-SNAPSHOT
+      - docker tag volanscoe:latest 608100859042.dkr.ecr.us-east-1.amazonaws.com/volanscoe:latest
   
   build:
     commands:
       - echo 'PUSHING'
       - $(aws ecr get-login --no-include-email)
 #      - kubectl --version
-      - docker push 608100859042.dkr.ecr.us-east-1.amazonaws.com/volanscoe/customer:0.0.1-SNAPSHOT
+#      - docker push 608100859042.dkr.ecr.us-east-1.amazonaws.com/volanscoe/customer:0.0.1-SNAPSHOT
+      - docker push 608100859042.dkr.ecr.us-east-1.amazonaws.com/volanscoe:latest
       - echo 'PUSHED'
       - kubectl --version
