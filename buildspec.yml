@@ -26,5 +26,6 @@ phases:
       - aws eks update-kubeconfig --name test-cluster
       - kubectl get all
       - kubectl apply -f ../deployment.yaml
+      - kubectl apply -f ../service.yaml
       - kubectl rollout restart -f ../deployment.yaml
       - echo 'Done'
