@@ -8,6 +8,6 @@ public class Customer {
 
     @GetMapping("/sayHello")
     public String sayHello(){
-        return "Hello Hello Hello";
+        return "Hello Clarice";
     }
 }
