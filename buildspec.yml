@@ -8,13 +8,13 @@ phases:
       - aws sts get-caller-identity
       - mvn spring-boot:build-image -DskipTests
       - docker image ls
-      - docker tag volanscoe:latest 608100859042.dkr.ecr.us-east-1.amazonaws.com/volanscoe:latest
+      - docker tag volanscoe:latest 608100859042.dkr.ecr.us-east-1.amazonaws.com/volanscoe:ver1
   
   build:
     commands:
       - echo 'PUSHING'
       - $(aws ecr get-login --no-include-email)
-      - docker push 608100859042.dkr.ecr.us-east-1.amazonaws.com/volanscoe:latest
+      - docker push 608100859042.dkr.ecr.us-east-1.amazonaws.com/volanscoe:ver1
       - echo 'PUSHED'
       - aws sts get-caller-identity
       - CREDENTIALS=$(aws sts assume-role --role-arn arn:aws:iam::608100859042:role/volans_coe_kubectl_role --role-session-name codebuild-kubectl --duration-seconds 900)
