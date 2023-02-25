@@ -24,7 +24,7 @@ spec:
         app: customer-api
     spec:
       containers:
-      - image: 608100859042.dkr.ecr.us-east-1.amazonaws.com/volanscoe:latest
+      - image: 608100859042.dkr.ecr.us-east-1.amazonaws.com/volanscoe:ver1
         imagePullPolicy: Always
         name: customer
       restartPolicy: Always
