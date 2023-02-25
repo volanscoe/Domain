@@ -16,8 +16,14 @@ phases:
       - $(aws ecr get-login --no-include-email)
 #      - docker push 608100859042.dkr.ecr.us-east-1.amazonaws.com/volanscoe:latest
       - echo 'PUSHED'
-      - aws eks update-kubeconfig --name test-cluster
       - aws sts get-caller-identity
+      - CREDENTIALS=$(aws sts assume-role --role-arn arn:aws:iam::608100859042:role/volans_coe_kubectl_role --role-session-name codebuild-kubectl --duration-seconds 900)
+      - echo ${CREDENTIALS}
+      - export AWS_ACCESS_KEY_ID="$(echo ${CREDENTIALS} | jq -r '.Credentials.AccessKeyId')"
+      - export AWS_SECRET_ACCESS_KEY="$(echo ${CREDENTIALS} | jq -r '.Credentials.SecretAccessKey')"
+      - export AWS_SESSION_TOKEN="$(echo ${CREDENTIALS} | jq -r '.Credentials.SessionToken')"
+      - export AWS_EXPIRATION=$(echo ${CREDENTIALS} | jq -r '.Credentials.Expiration')
+      - aws eks update-kubeconfig --name test-cluster
       - kubectl get all
       - kubectl apply -f ./deployment.yaml
       - echo 'Done'
