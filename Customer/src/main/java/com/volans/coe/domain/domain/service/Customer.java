@@ -8,6 +8,6 @@ public class Customer {
 
     @GetMapping("/sayHello")
     public String sayHello(){
-        return "Hello Horizon";
+        return "Mankind was born on earth but is not supposed to die here";
     }
 }
